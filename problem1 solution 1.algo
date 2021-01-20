@@ -1,0 +1,32 @@
+ALGORITHM Nbrocc
+VAR
+    set1 : ARRAY_OF INTEGER[50];
+    set2 : ARRAY_OF INTEGER[50];
+    n1,n2,s:INTEGER; 
+BEGIN
+    sd:=0; 
+    se:=0; 
+    REPEAT
+        Write("Donner la Taille du tableau set1")
+        Read(n1); 
+        Write("Donner la Taille du tableau set2")
+        Read(n2); 
+    UNTIL ((n1>0) and (n2>0)); 
+    FOR i FROM 0 TO n1 STEP 1  DO
+        Read(set1[i]); 
+    END_FOR
+    FOR j FROM 0 TO n2 STEP 1  DO
+        Read(set2[i]); 
+    END_FOR
+    FOR i FROM 0 TO n1 STEP 1  DO
+        FOR j FROM 0 TO n2 STEP step  DO
+            IF (set1[i]<>set2[j]) THEN
+                sd=(set1[i]+set2[j])*2;
+            ELSE
+                se=(set1[i]+set2[j])*2; 
+            END_IF
+        END_FOR
+    END_FOR
+    Write("la somme des élements distinct est", sd); 
+    Write("la somme des élémnts égaux est ",se); 
+END
